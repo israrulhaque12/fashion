@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion-Fiesta</title>
+
+    <!-- Bootstrap -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" /> -->
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Lightbox CSS & Script -->
+    <script src="resources/lightbox/ekko-lightbox.js"></script>
+    <link rel="stylesheet" href="resources/lightbox/ekko-lightbox.css" />
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #232323;
+            margin: 0;
+        }
+
+        .navbar>a>img{
+            margin: 0px 20px;
+            height: 100px;
+        }
+
+        .navbar {
+            background-color: #0f0f0f;
+        }
+
+        .navbar button {
+            color: white;
+            transition: 1s;
+        }
+
+        .navbar button:hover {
+            color: rgb(82, 10, 88);
+        }
+
+        hr {
+            border: 1px solid white;
+            margin: 30px;
+        }
+
+        .navbar span {
+            color: rgb(78, 10, 74);
+        }
+
+        .navbar p {
+            color: rgb(87, 11, 87);
+            display: inline-block;
+        }
+
+        .navbar div {
+            padding-top: 10px;
+        }
+
+        .common {
+            color: white;
+            text-shadow: 1px 1px black;
+            font-weight: bold;
+        }
+
+        .call {
+            margin-top: -20px;
+            font-size: 15px;
+            background-color: rgb(83, 9, 61);
+            padding: 6px 13px 8px 13px;
+            border-radius: 8px;
+            transition: 1s;
+        }
+
+        .common:hover {
+            text-decoration: none;
+
+        }
+
+        .home {
+            background-color: rgb(78, 10, 65);
+            padding: 6px 13px 8px 13px;
+            border-radius: 8px;
+            transition: 1s;
+        }
+
+        .call:hover {
+            background-color: transparent;
+            border: 1px solid rgb(77, 8, 67);
+            color: rgb(53, 6, 35);
+        }
+
+        .home:hover {
+            background-color: transparent;
+            border: 1px solid rgb(64, 6, 53);
+            color: rgb(68, 10, 59);
+        }
+
+        .git {
+            transition: 1s;
+        }
+
+        .git:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+        .logo span {
+            transition: 1s;
+        }
+
+        .logo span:hover {
+            color: white;
+        }
+
+        .sec2,
+        .sec3,
+        .sec4 {
+            background-color: #191919;
+            padding: 20px 10px 10px 20px;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .sec2 h1,
+        .sec3 h1,
+        .sec4 h1 {
+            font-size: 30px;
+        }
+
+        .sec2>div {
+            margin: 20px 0px;
+        }
+
+        .pin {
+            color: rgb(69, 10, 71);
+            font-size: 25px;
+            margin-right: 10px;
+        }
+
+        .sec3>div>div>img {
+            height: 100px;
+            border-radius: 100%;
+            width: 150px;
+        }
+
+        .sec3>div {
+            margin: 20px 0px;
+        }
+
+        .sec3>div>div {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .sec3 p {
+            font-weight: bold;
+        }
+
+        .sec3 span {
+            font-size: 12px;
+        }
+
+        #gallery {
+            text-align: center;
+        }
+
+        #gallery img {
+            height: 200px;
+            width: 250px;
+            margin: 10px;
+            transition: .5s;
+        }
+
+        #gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        form {
+            margin: auto 0px;
+        }
+
+        .sec5 button {
+            background-color: transparent;
+            border: 3px solid rgb(56, 5, 54);
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            transform: scale(1.1);
+            margin: 20px 10px;
+        }
+
+        .form-control {
+            background-color: rgb(51, 51, 51);
+            width: 100%;
+            border: none;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+
+        .sec5 {
+            color: white;
+            padding: 20px;
+        }
+
+        .sec5 h1 {
+            font-size: 25px;
+        }
+
+        .sec5 p {
+            font-size: 12px;
+        }
+
+        .sign {
+            display: inline-block;
+            color: rgb(86, 11, 77);
+            font-size: 30px;
+        }
+
+        .head {
+            display: inline-block;
+        }
+
+        .head p {
+            color: rgb(88, 88, 88);
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 0px;
+            margin-bottom: 5px;
+        }
+
+        .head span {
+            line-height: 0px;
+            font-size: 12px;
+        }
+
+        .sec4 {
+            margin-top: -80px;
+        }
+
+        .sec4>div>div>div {
+            margin: 5px 0px;
+        }
+
+        #top-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            color: rgb(80, 13, 79);
+        }
+        .sec5{
+            background-color: #191919;
+            margin-bottom: 30px;
+            padding: 50px;
+            border-radius: 20px;
+        }
+        footer{
+            background-color: #0f0f0f;
+            border-radius: 10px;
+        }
+        footer a{
+            color: white;
+            font-size: 25px;
+            transition: 1s;
+        }
+        footer a:hover{
+            text-decoration: none;
+            color: #232323;
+        }
+        .getintouch {
+            text-align: center;
+            margin-bottom: -50px;
+        }
+        .getintouch h2 {
+            color: rgb(51, 51, 51);
+            font-weight: bold;
+            font-size: 70px;
+        }
+
+        .getintouch h1 {
+            color: #480e4b;
+            font-weight: bold;
+            position: relative;
+            font-size: 45px;
+            bottom: 75px;
+        }
+        .more{
+            margin-bottom: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+        <a href="index.html" class="navbar-brand logo">
+            <img src="Resources/fashion.svg" alt="">
+        </a>
+        <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#my-navbar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="my-navbar">
+            <ul class="navbar-nav mx-auto p-2">
+                <li class="mx-3 my-2">
+                    <a href="index.html" class="common home">Home</a>
+                </li>
+                <li class="mx-3 my-2">
+                    <p class="git">Get In Touch</p>
+                </li>
+            </ul>
+            <a id="call" href="tel:0000000000" class="call mx-4 common"><i class="fa-solid fa-phone"></i> Call Us</a>
+        </div>
+    </nav>
+    <section id="sec1">
+        <hr />
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Resources/Banner5.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="Resources/Banner2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="Resources/Banner3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="Resources/Banner4.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="Resources/Banner1.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
+                data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
+                data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+        <hr />
+    </section>
+    <section class="sec2 container" data-aos="fade-up" data-aos-duration="1000">
+        <h1>UPCOMING EVENTS:</h1>
+        <div class="row" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>20<sup>th</sup> May, 2023, XYZ-Mall, Noida.</p>
+            </div>
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>23<sup>rd</sup> May, 2023, ABC Park, Delhi.</p>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>25<sup>th</sup> May, 2023, Pacific Mall, New-Delhi.</p>
+            </div>
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>28<sup>th</sup> May, 2023, Expo-Mart, Noida.</p>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>1<sup>st</sup> June, 2023, Advant, Noida</p>
+            </div>
+            <div class="col-md">
+                <p><i class="fa-solid fa-location-dot pin"></i>2<sup>nd</sup> June,2023, DLF Mall, Gurugram.</p>
+            </div>
+        </div>
+    </section>
+    <hr />
+    <section class="sec3 container">
+        <h1 data-aos="fade-right" data-aos-duration="1000">FASHION DESIGNERS INVOLVED:</h1>
+        <div class="row">
+            <div class="col-md" data-aos="fade-down" data-aos-duration="1000">
+                <img src="https://i.guim.co.uk/img/media/48969322d7c394dee4e0acea35f722b60f3d6853/0_918_2655_1593/master/2655.jpg?width=1020&quality=45&dpr=2&s=none"
+                    alt="">
+                <p>Stella McCartney</p>
+                <span>Stella McCartney is a british fashion designer, she designed the uniforms for the athletes
+                    representing Great Britain at the 2012 London Olympic and Paralympic Games. In 2018, Meghan Markle
+                    wore her designed dress at her wedding reception.</span>
+            </div>
+            <div class="col-md" data-aos="fade-down" data-aos-duration="1000">
+                <img src="https://www.edudwar.com/wp-content/uploads/2022/07/Calvin-Klein.jpg" alt="">
+                <p>Calvin Klein</p>
+                <span>Calvin Klein, in full Calvin Richard Klein, (born November 19, 1942, Bronx, New York, New York,
+                    U.S.), American fashion designer noted for his womenswear, menswear, jeans, cosmetics and perfumes,
+                    bed and bath linens, and other collections.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://www.edudwar.com/wp-content/uploads/2022/07/Giorgio-Armani.jpg" alt="">
+                <p>Giorgio Armani</p>
+                <span>Giorgio Armani, (born July 11, 1934, Piacenza, Italy), Italian fashion designer whose signature
+                    style of relaxed yet luxurious ready-to-wear and elegant, intricately beaded evening wear helped
+                    introduce ease and streamlined modernity to late 20th-century dressing.</span>
+            </div>
+            <div class="col-md" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://www.edudwar.com/wp-content/uploads/2022/07/Tom-Ford.jpg" alt="">
+                <p>Tom Ford</p>
+                <span>Thomas Carlyle Ford (born August 27, 1961) is an American fashion designer and filmmaker. He
+                    launched his eponymous luxury brand in 2005, having previously served as the creative director at
+                    Gucci and Yves Saint Laurent. Ford wrote and directed the films A Single Man (2009) and Nocturnal
+                    Animals (2016).</span>
+            </div>
+        </div>
+    </section>
+    <hr class="more"/>
+    <section class="sec4 container" id="gallery">
+        <h1>SOME OF OUR WORK:</h1>
+        <a href="Resources/lightbox1.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox1.jpg" alt=""></a>
+        <a href="Resources/lightbox2.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox2.jpg" alt=""></a>
+        <a href="Resources/lightbox7.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox7.jpg" alt=""></a>
+        <a href="Resources/lightbox4.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox4.jpg" alt=""></a>
+        <a href="Resources/lightbox3.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox3.jpg" alt=""></a>
+        <a href="Resources/lightbox6.jpg" data-toggle="lightbox" data-gallery="my-gallery"><img
+                src="Resources/lightbox6.jpg" alt=""></a>
+    </section>
+    <hr/>
+    <section class="getintouch" data-aos="fade-down" data-aos-duration="1000">
+        <div>
+            <h2>
+                CONTACT
+            </h2>
+        </div>
+        <div>
+            <h1>GET IN <span>TOUCH</span></h1>
+        </div>
+    </section>
+    <hr/>
+    <section class="sec5 container">
+        <div class="row">
+            <div class="col-md" data-aos="fade-right" data-aos-duration="1000">
+                <h1>
+                    Any Query?
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, atque?</p>
+                <div>
+                    <div class="sign"><i class="fa-solid fa-map"></i></div>
+                    <div class="head">
+                        <p>ADDRESS</p>
+                        <span>India</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="sign"><i class="fa-solid fa-envelope-open"></i></div>
+                    <div class="head">
+                        <p>MAIL</p>
+                        <span>israrulhaque899@gmail.com</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="sign"><i class="fa-solid fa-square-phone"></i></div>
+                    <div class="head">
+                        <p>CALL</p>
+                        <span>+91-6207741562</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md my-2" data-aos="fade-left" data-aos-duration="1000">
+                <form name="google-sheet">
+                    <div class="row">
+                        <div class="col-md">
+                            <input type="text" placeholder="YOUR NAME" name="Name" class="form-control" required />
+                        </div>
+                        <div class="col-md">
+                            <input type="tel" placeholder="YOUR PHONE" class="form-control" name="Email" required />
+                        </div>
+                    </div>
+                    <div>
+                        <textarea
+                            style="background-color:rgb(51, 51, 51);border: none;border-radius: 15px;color: black;"
+                            cols="20" rows="6" placeholder="YOUR REVIEW" name="Message" class="form-control"></textarea>
+                    </div>
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class=" p-2 text-center" data-aos="fade-up" data-aos-duration="1000">
+        <a href="index.html">
+          <img src="resources/foodbox-logo.png" height="30px" alt="">
+          <span>Fashion-</span>Fiesta
+        </a>
+        <br/>
+        <p>&copy Rights Reserved</p>
+        <p>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </p>
+    </footer>
+    <label id="top-button"><i class="fa-solid fa-circle-up fa-3x"></i></label>
+</body>
+<script>
+    AOS.init();
+    //script for scroll to top
+    $("#top-button").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+    });
+
+    $(".git").click(function () {
+        $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 1000);
+    });
+</script>
+<script>
+    var scriptURL = "https://script.google.com/macros/s/AKfycbwgjsJFvGQDg9p2aZFQKmApkekO1bsS5DH-RJPBE3eK6yGrGHYYY9kXA1cWguSUqArg/exec";
+    var form = document.forms['google-sheet'];
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+    });
+</script>
+</html>
